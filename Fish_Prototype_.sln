@@ -1,0 +1,35 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{DC0A9987-817F-C2F6-1288-C8C831B29610}") = "Fish_Prototype_", "Assembly-CSharp-firstpass.csproj", "{AA7B63B3-854B-E4D9-85DB-7D6874FDCAF1}"
+EndProject
+Project("{DC0A9987-817F-C2F6-1288-C8C831B29610}") = "Fish_Prototype_", "Assembly-CSharp.csproj", "{3370C2D6-0C46-298C-4F09-D7C4B42F75C3}"
+EndProject
+Project("{DC0A9987-817F-C2F6-1288-C8C831B29610}") = "Fish_Prototype_", "Assembly-CSharp-Editor.csproj", "{F65EF77E-31E0-F7AC-C11F-3B220022672C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AA7B63B3-854B-E4D9-85DB-7D6874FDCAF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA7B63B3-854B-E4D9-85DB-7D6874FDCAF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA7B63B3-854B-E4D9-85DB-7D6874FDCAF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA7B63B3-854B-E4D9-85DB-7D6874FDCAF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3370C2D6-0C46-298C-4F09-D7C4B42F75C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3370C2D6-0C46-298C-4F09-D7C4B42F75C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3370C2D6-0C46-298C-4F09-D7C4B42F75C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3370C2D6-0C46-298C-4F09-D7C4B42F75C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F65EF77E-31E0-F7AC-C11F-3B220022672C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F65EF77E-31E0-F7AC-C11F-3B220022672C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F65EF77E-31E0-F7AC-C11F-3B220022672C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F65EF77E-31E0-F7AC-C11F-3B220022672C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal

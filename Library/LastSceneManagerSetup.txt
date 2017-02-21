@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/_New_Fish_Project/_Scenes/Mechanics.unity
+  isLoaded: 1
+  isActive: 1
