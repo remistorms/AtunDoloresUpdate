@@ -6,10 +6,21 @@ ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Tuna_Can
+    100004: Tuna_Can_Lid
     400000: //RootNode
+    400002: Tuna_Can
+    400004: Tuna_Can_Lid
     2300000: //RootNode
+    2300002: Tuna_Can
+    2300004: Tuna_Can_Lid
     3300000: //RootNode
+    3300002: Tuna_Can
+    3300004: Tuna_Can_Lid
     4300000: Tuna_Can.002
+    4300002: Tuna_Can_Lid
+    4300004: Tuna_Can
+    4300006: Tuna_Can.008
   materials:
     importMaterials: 1
     materialName: 0
