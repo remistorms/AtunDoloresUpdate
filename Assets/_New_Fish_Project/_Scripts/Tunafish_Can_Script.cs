@@ -89,11 +89,16 @@ public class Tunafish_Can_Script : MonoBehaviour {
 	{
 		if (other.tag == "Fish" && can_grab == true) 
 		{
-
 			GrowCan ();
 			AddFish ();
 			other.GetComponent<Fish_Script> ().ReturnToPool ();
+		}
 
+		if (other.tag == "Trash" && can_grab == true) 
+		{
+			GrowCan ();
+			other.GetComponent<Fish_Script> ().ReturnToPool ();
+			ResetCan ();
 		}
 	}
 

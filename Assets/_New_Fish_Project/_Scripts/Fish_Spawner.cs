@@ -9,12 +9,14 @@ public class Fish_Spawner : MonoBehaviour {
 	float max_coverage_x =30, max_coverage_z = 30;
 	float min_force = 20, max_force = 30;
 	public GameObject fish_prefab;
+	public GameObject trash_prefab;
 	//public GameObject[] target_points;
 
 	//POOL VARIABLES
 	public int max_pooled_fish = 20;
+	public int max_pooled_trash = 20;
 	public Transform pool_parent;
-	public List<GameObject> pooled_fish, used_fish;
+	public List<GameObject> pooled_fish, used_fish, pooled_trash, used_trash;
 
 	Vector3 fish_direction;
 
@@ -39,6 +41,7 @@ public class Fish_Spawner : MonoBehaviour {
 		//Manager_Event.EM.EVT_Game_Start += StartEasyMode;
 		Manager_Event.EM.EVT_Game_Over += StopSpawning;
 		PoolFish (max_pooled_fish);
+		PoolTrash (max_pooled_trash);
 	}
 
 	void Update()
@@ -56,7 +59,8 @@ public class Fish_Spawner : MonoBehaviour {
 		min_force = 25;
 		max_force = 30;
 		max_coverage_x = max_coverage_z = 30;
-		InvokeRepeating ("SpawnFish", 1, spawn_rate);
+		//InvokeRepeating ("SpawnFish", 1, spawn_rate);
+		InvokeRepeating("SpawnFishOrTrash", 1, spawn_rate);
 	}
 
 	public void StartMediumMode()
@@ -66,7 +70,8 @@ public class Fish_Spawner : MonoBehaviour {
 		min_force = 25;
 		max_force = 40;
 		max_coverage_x = max_coverage_z = 35;
-		InvokeRepeating ("SpawnFish", 1.5f, spawn_rate);
+		//InvokeRepeating ("SpawnFish", 1.5f, spawn_rate);
+		InvokeRepeating("SpawnFishOrTrash", 1.5f, spawn_rate);
 	}
 
 	public void StartHardMode()
@@ -76,7 +81,8 @@ public class Fish_Spawner : MonoBehaviour {
 		min_force = 25;
 		max_force = 45;
 		max_coverage_x = max_coverage_z = 20;
-		InvokeRepeating ("SpawnFish", 1.5f, spawn_rate);
+		//InvokeRepeating ("SpawnFish", 1.5f, spawn_rate);
+		InvokeRepeating("SpawnFishOrTrash", 1.5f, spawn_rate);
 	}
 
 	public void SpawnFish()
@@ -93,6 +99,37 @@ public class Fish_Spawner : MonoBehaviour {
 			Debug.LogError ("Sorry, there are no pooled fish, wait for them to come back :) ");
 		}
 
+	}
+
+	public void SpawnTrash()
+	{
+		if (pooled_trash.Count > 0) 
+		{
+			GameObject selected_trash = pooled_trash [0];
+			pooled_trash.Remove (selected_trash);
+			used_trash.Add (selected_trash);
+			ShootFish (selected_trash);
+		} 
+		else 
+		{
+			Debug.LogError ("Sorry, there are no pooled Trash, wait for them to come back :) ");
+		}
+	}
+
+	public void SpawnFishOrTrash()
+	{
+		int random = Random.Range (0, 2);
+		Debug.LogError ("random number was: " + random.ToString ());
+
+		if (random == 0) 
+		{
+			SpawnFish ();
+		}
+
+		if (random == 1) 
+		{
+			SpawnTrash ();	
+		}
 	}
 
 	public void ShootFish(GameObject fish)
@@ -166,6 +203,18 @@ public class Fish_Spawner : MonoBehaviour {
 		}
 	}
 
+	//POOL TRASH OBJECTS
+	public void PoolTrash(int total_trash)
+	{
+		for (int i = 0; i < total_trash; i++) 
+		{
+			GameObject spawned_trash = Instantiate (trash_prefab, pool_parent.transform.position, Quaternion.identity) as GameObject;
+			spawned_trash.transform.SetParent (pool_parent);
+			pooled_trash.Add (spawned_trash);
+			spawned_trash.GetComponent<Rigidbody> ().isKinematic = true;
+		}
+	}
+
 	public void ReturnToPool(GameObject returning_fish)
 	{
 		Debug.Log ("Fish returned home safe, no harm was done...");
@@ -173,5 +222,14 @@ public class Fish_Spawner : MonoBehaviour {
 		pooled_fish.Add (returning_fish);
 		returning_fish.GetComponent<Rigidbody> ().isKinematic = true;
 		returning_fish.transform.localPosition = Vector3.zero;
+	}
+
+	public void ReturnToTrashPool(GameObject returning_trash)
+	{
+		Debug.Log ("Trash returned home safe, no harm was done...");
+		used_trash.Remove (returning_trash);
+		pooled_trash.Add (returning_trash);
+		returning_trash.GetComponent<Rigidbody> ().isKinematic = true;
+		returning_trash.transform.localPosition = Vector3.zero;
 	}
 }

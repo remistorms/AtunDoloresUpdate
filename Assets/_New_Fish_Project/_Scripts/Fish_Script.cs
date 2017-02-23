@@ -45,7 +45,16 @@ public class Fish_Script : MonoBehaviour {
 
 	public void ReturnToPool()
 	{
-		Fish_Spawner.instance.ReturnToPool (this.gameObject);	
+		if (this.gameObject.tag == "Fish") 
+		{
+			Fish_Spawner.instance.ReturnToPool (this.gameObject);
+		}
+
+		else if (this.gameObject.tag == "Trash") 
+		{
+			Fish_Spawner.instance.ReturnToTrashPool (this.gameObject);
+		}
+			
 	}
 
 	void OnDisable()

@@ -39,7 +39,7 @@ public class GameControl : Manager {
 	void StartGame()
 	{
 		cardboard_Object.SetActive (true);
-		//vr_viewer_instance.VRModeEnabled = true;
+		vr_viewer_instance.VRModeEnabled = true;
 		Manager_Event.EM.Fire_EVT_Game_Start ();
 		MainUI.instance.GameStartTimer ();
 	}
@@ -71,7 +71,7 @@ public class GameControl : Manager {
 
 		Manager_Sound.instance.PlayMainMuscic ();
 		cardboard_Object.SetActive (true);
-		//vr_viewer_instance.VRModeEnabled = true;
+		vr_viewer_instance.VRModeEnabled = true;
 		Manager_Event.EM.Fire_EVT_Game_Start ();
 		MainUI.instance.GameStartTimer ();
 		Fish_Spawner.instance.StartEasyMode ();
@@ -88,7 +88,7 @@ public class GameControl : Manager {
 
 		Manager_Sound.instance.PlayMainMuscic ();
 		cardboard_Object.SetActive (true);
-		//vr_viewer_instance.VRModeEnabled = true;
+		vr_viewer_instance.VRModeEnabled = true;
 		Manager_Event.EM.Fire_EVT_Game_Start ();
 		MainUI.instance.GameStartTimer ();
 		Fish_Spawner.instance.StartMediumMode ();
@@ -104,7 +104,7 @@ public class GameControl : Manager {
 
 		Manager_Sound.instance.PlayMainMuscic ();
 		cardboard_Object.SetActive (true);
-		//vr_viewer_instance.VRModeEnabled = true;
+		vr_viewer_instance.VRModeEnabled = true;
 		Manager_Event.EM.Fire_EVT_Game_Start ();
 		MainUI.instance.GameStartTimer ();
 		Fish_Spawner.instance.StartHardMode ();
