@@ -128,6 +128,10 @@
      <Compile Include="Assets\OLD\Standard Assets\Effects\ImageEffects\Scripts\Twirl.cs" />
      <Compile Include="Assets\OLD\Standard Assets\Effects\ImageEffects\Scripts\VignetteAndChromaticAberration.cs" />
      <Compile Include="Assets\OLD\Standard Assets\Effects\ImageEffects\Scripts\Vortex.cs" />
+     <Compile Include="Assets\Update_Files\FarlandSkies\Demo\Scripts\Player\FPSWalkerEnhanced.cs" />
+     <Compile Include="Assets\Update_Files\FarlandSkies\Demo\Scripts\Player\SmoothMouseLook.cs" />
+     <Compile Include="Assets\Update_Files\FarlandSkies\Demo\Scripts\Skybox\SkyboxChanger.cs" />
+     <Compile Include="Assets\Update_Files\FarlandSkies\Demo\Scripts\Skybox\SkyboxRotator.cs" />
      <Compile Include="Assets\_New_Fish_Project\TestScripts\Ganaste_Test.cs" />
      <Compile Include="Assets\_New_Fish_Project\TestScripts\Petition_Test.cs" />
      <Compile Include="Assets\_New_Fish_Project\TestScripts\Premio_Test.cs" />
@@ -172,6 +176,7 @@
      <Compile Include="Assets\_New_Fish_Project\_Scripts\UI_Scripts\Panel_Premios.cs" />
      <Compile Include="Assets\_New_Fish_Project\_Scripts\UI_Scripts\SeleccionDeCadena.cs" />
      <Compile Include="Assets\_New_Fish_Project\_Scripts\UI_Scripts\SeleccionDePlaza.cs" />
+     <Compile Include="Assets\_New_Fish_Project\_Scripts\UI_Scripts\Version_Getter.cs" />
      <None Include="Assets\OLD\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\OLD\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\OLD\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderRGB.shader" />

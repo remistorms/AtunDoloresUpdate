@@ -5,6 +5,7 @@ public class CanSounds : MonoBehaviour {
 
 	public AudioSource can_audio_source;
 	public AudioClip bloop_sound;
+	public AudioClip error_sound;
 
 	void Start()
 	{
@@ -15,6 +16,12 @@ public class CanSounds : MonoBehaviour {
 	{
 		can_audio_source.pitch = pitch;
 		can_audio_source.clip = bloop_sound;
+		can_audio_source.Play ();
+	}
+
+	public void PlayError()
+	{
+		can_audio_source.clip = error_sound;
 		can_audio_source.Play ();
 	}
 }

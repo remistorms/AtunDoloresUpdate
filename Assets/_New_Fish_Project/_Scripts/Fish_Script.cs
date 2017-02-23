@@ -8,6 +8,15 @@ public class Fish_Script : MonoBehaviour {
 	public GameObject shadow_projector;
 	public Rigidbody fish_rigid_body;
 	Fish_Audio fish_audio_ref;
+	public MeshRenderer fish_mesh;
+	public Texture[] fish_skins;
+	Texture random_texture;
+
+	void Awake()
+	{
+		random_texture = fish_skins [Random.Range (0, 5)];
+		fish_mesh.material.SetTexture ("_MainTex", random_texture);
+	}
 	// Use this for initialization
 	void Start () 
 	{
@@ -15,6 +24,7 @@ public class Fish_Script : MonoBehaviour {
 		shadow_projector.transform.forward = new Vector3 (0, -1, 0);
 		fish_rigid_body = GetComponent<Rigidbody> ();
 		fish_audio_ref = GetComponent<Fish_Audio> ();
+	
 	}
 	
 	void Update()
@@ -40,6 +50,7 @@ public class Fish_Script : MonoBehaviour {
 		if (other.name == "ReturnVolume") 
 		{
 			ReturnToPool ();
+			//RandomFishColor ();
 		}
 	}
 

@@ -96,6 +96,7 @@ public class Tunafish_Can_Script : MonoBehaviour {
 
 		if (other.tag == "Trash" && can_grab == true) 
 		{
+			can_sounds_ref.PlayError ();
 			GrowCan ();
 			other.GetComponent<Fish_Script> ().ReturnToPool ();
 			ResetCan ();

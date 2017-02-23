@@ -32,6 +32,8 @@ public class Fish_Spawner : MonoBehaviour {
 	{
 		//Subscribe from the event Destroyed Fish
 		Physics.gravity = new Vector3 (0, -20, 0);
+		PoolFish (max_pooled_fish);
+		PoolTrash (max_pooled_trash);
 	}
 	// Use this for initialization
 	void Start () 
@@ -40,8 +42,7 @@ public class Fish_Spawner : MonoBehaviour {
 		//InvokeRepeating ("SpawnFish", 1, 0.25f);
 		//Manager_Event.EM.EVT_Game_Start += StartEasyMode;
 		Manager_Event.EM.EVT_Game_Over += StopSpawning;
-		PoolFish (max_pooled_fish);
-		PoolTrash (max_pooled_trash);
+
 	}
 
 	void Update()
@@ -54,7 +55,7 @@ public class Fish_Spawner : MonoBehaviour {
 
 	public void StartEasyMode()
 	{
-		spawn_rate = 0.5f;
+		spawn_rate = 0.3f;
 		direction_variation = 1f;
 		min_force = 25;
 		max_force = 30;
@@ -65,7 +66,7 @@ public class Fish_Spawner : MonoBehaviour {
 
 	public void StartMediumMode()
 	{
-		spawn_rate = 1.0f;
+		spawn_rate = 0.5f;
 		direction_variation = 4f;
 		min_force = 25;
 		max_force = 40;
@@ -76,7 +77,7 @@ public class Fish_Spawner : MonoBehaviour {
 
 	public void StartHardMode()
 	{
-		spawn_rate = 1.6f;
+		spawn_rate = 0.7f;
 		direction_variation = 20f;
 		min_force = 25;
 		max_force = 45;
@@ -118,18 +119,19 @@ public class Fish_Spawner : MonoBehaviour {
 
 	public void SpawnFishOrTrash()
 	{
-		int random = Random.Range (0, 2);
-		Debug.LogError ("random number was: " + random.ToString ());
+		int random = Random.Range (0, 3);
 
-		if (random == 0) 
+		switch (random) 
 		{
+		case 0:
+			SpawnTrash ();
+			break;
+
+		default:
 			SpawnFish ();
+			break;
 		}
 
-		if (random == 1) 
-		{
-			SpawnTrash ();	
-		}
 	}
 
 	public void ShootFish(GameObject fish)
